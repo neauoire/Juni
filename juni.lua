@@ -51,11 +51,7 @@ function key_up(key,mod)
         if ch == "$l" then keybow.tap_key(keybow.LEFT_ARROW) ; return end
         if ch == "$r" then keybow.tap_key(keybow.RIGHT_ARROW) ; return end
         -- Sends
-        if shift_key == true then
-            send(string.upper(ch))
-        else
-            send(ch)
-        end
+        send(ch)
     end
 end
 
@@ -147,6 +143,11 @@ end
 -- Low --
 
 function handle_key_09(pressed)
+    if pressed == true then
+        keybow.set_modifier(keybow.LEFT_SHIFT, keybow.KEY_DOWN)
+    else
+        keybow.set_modifier(keybow.LEFT_SHIFT, keybow.KEY_UP)
+    end
     shift_key = pressed
     update_lights()
 end
