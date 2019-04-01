@@ -1,4 +1,4 @@
-require "keybow"
+-- require "keybow"
 
 local layer = 0
 local last_key = nil
@@ -40,17 +40,21 @@ function get_char(key,layer)
     return template[key+1][1]
 end
 
+function set_layer(mod,layer,pressed)
+
+end
+
 function send(ch)
-    -- print(ch)
-    keybow.tap_key(ch)
+    print(ch)
+    -- keybow.tap_key(ch)
 end
 
 function input(key,layer_mod,layer,pressed)
     local ch = get_char(key,layer)
     if ch == nil then return end
 
-    -- Layer 0, self
-    if layer == 0 and key == last_key then
+    -- AA
+    if layer == 0 and key == last_key and pressed == false then
         send(ch)
     end
 
@@ -60,11 +64,12 @@ function input(key,layer_mod,layer,pressed)
         end
     end
 
+
     if pressed == true then
         last_key = key
-        layer = layer_mod
     end
 
+    set_layer(layer_mod,layer,pressed)
 end
 
 -- Map --
@@ -128,49 +133,38 @@ function handle_key_00(pressed)
 end
 
 function benchmark()
-    print("============= Layer: 0")
-    print("\nh")
+    print("============= Layer: AA")
+    print("\nexpected: h")
     handle_key_11(true)
     handle_key_11(false)
-    print("\ns")
-    handle_key_08(true)
-    handle_key_08(false)
-    print("\nn")
-    handle_key_05(true)
-    handle_key_05(false)
-    print("\ni")
-    handle_key_02(true)
-    handle_key_02(false)
-    print("\no")
-    handle_key_10(true)
-    handle_key_10(false)
-    print("\na")
-    handle_key_07(true)
-    handle_key_07(false)
-    print("\nt")
-    handle_key_04(true)
-    handle_key_04(false)
-    print("\ne")
-    handle_key_01(true)
-    handle_key_01(false)
 
-    print("============= Layer: 1")
-    print("============= Layer: Order A")
-    print("\ns")
+    print("============= Layer: AA ")
+    print("\nexpected: h")
+    handle_key_11(true)
+    handle_key_11(false)
+
+    print("============= Layer: AAA")
+    print("\nexpected: h")
+    handle_key_11(true)
+    handle_key_11(true)
+    handle_key_11(false)
+
+    print("============= Layer: ABBA")
+    print("\nexpected: m")
     handle_key_11(true)
     handle_key_08(true)
     handle_key_08(false)
     handle_key_11(false)
 
-    print("============= Layer: Order B")
-    print("\ns")
+    print("============= Layer: ABAB")
+    print("\nexpected: s")
     handle_key_11(true)
     handle_key_08(true)
     handle_key_11(false)
     handle_key_08(false)
 
-    print("============= Layer: Order C")
-    print("\nn")
+    print("============= Layer: ABAB ")
+    print("\nexpected: n")
     handle_key_11(true)
     handle_key_05(true)
     handle_key_11(false)
@@ -178,4 +172,4 @@ function benchmark()
     
 end
 
--- benchmark()
+benchmark()
