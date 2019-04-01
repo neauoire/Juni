@@ -40,28 +40,30 @@ function get_char(key,layer)
     return template[key+1][1]
 end
 
-function set_layer(mod,layer,pressed)
-
+function set_layer(mod,pressed)
+    if mod == layer then return end
+    
+    if mod == 0 then
+        layer = mod
+    else 
+        layer = mod
+    end
 end
 
 function send(ch)
-    print(ch)
+    print("output:",ch)
     -- keybow.tap_key(ch)
 end
 
-function input(key,layer_mod,layer,pressed)
+function input(key,mod,pressed)
     local ch = get_char(key,layer)
     if ch == nil then return end
 
+    print(key,mod,layer,pressed)
+    
     -- AA
-    if layer == 0 and key == last_key and pressed == false then
-        send(ch)
-    end
-
-    if pressed == true then
-        if layer > 0 then
-            send(ch)
-        end
+    if key == last_key and pressed == false then
+        send(get_char(key,0))
     end
 
 
@@ -69,7 +71,12 @@ function input(key,layer_mod,layer,pressed)
         last_key = key
     end
 
-    set_layer(layer_mod,layer,pressed)
+    -- Layer
+    if pressed == true and layer == 0 then
+        set_layer(mod)
+    else
+        set_layer(0)
+    end
 end
 
 -- Map --
@@ -81,37 +88,37 @@ end
 -- Top --
 
 function handle_key_11(pressed)
-    input(11, 8, layer, pressed)
+    input(11, 8, pressed)
 end
 
 function handle_key_08(pressed)
-    input(8, 7, layer, pressed)
+    input(8, 7, pressed)
 end
 
 function handle_key_05(pressed)
-    input(5, 6, layer, pressed)
+    input(5, 6, pressed)
 end
 
 function handle_key_02(pressed)
-    input(2, 5, layer, pressed)
+    input(2, 5, pressed)
 end
 
 -- Mid --
 
 function handle_key_10(pressed)
-    input(10, 4, layer, pressed)
+    input(10, 4, pressed)
 end
 
 function handle_key_07(pressed)
-    input(7, 3, layer, pressed)
+    input(7, 3, pressed)
 end
 
 function handle_key_04(pressed)
-    input(4, 2, layer, pressed)
+    input(4, 2, pressed)
 end
 
 function handle_key_01(pressed)
-    input(1, 1, layer, pressed)
+    input(1, 1, pressed)
 end
 
 -- Low --
@@ -143,10 +150,16 @@ function benchmark()
     handle_key_11(true)
     handle_key_11(false)
 
-    print("============= Layer: AAA")
+    print("============= Layer: AAA ")
     print("\nexpected: h")
     handle_key_11(true)
     handle_key_11(true)
+    handle_key_11(false)
+
+    print("============= Layer: AAA ")
+    print("\nexpected: h")
+    handle_key_11(true)
+    handle_key_11(false)
     handle_key_11(false)
 
     print("============= Layer: ABBA")
@@ -157,7 +170,7 @@ function benchmark()
     handle_key_11(false)
 
     print("============= Layer: ABAB")
-    print("\nexpected: s")
+    print("\nexpected: m")
     handle_key_11(true)
     handle_key_08(true)
     handle_key_11(false)
@@ -169,6 +182,15 @@ function benchmark()
     handle_key_05(true)
     handle_key_11(false)
     handle_key_05(false)
+
+    print("============= Layer: ABBBBA")
+    print("\nexpected: mm")
+    handle_key_11(true)
+    handle_key_08(true)
+    handle_key_08(false)
+    handle_key_08(true)
+    handle_key_08(false)
+    handle_key_11(false)
     
 end
 
