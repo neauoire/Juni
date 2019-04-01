@@ -1,19 +1,13 @@
 require "keybow"
 
-local _00 = false
-local _01 = false
-local _02 = false
-local _03 = false
-
-local _04 = false
-local _05 = false
-local _06 = false
-local _07 = false
-
-local _08 = false
-local _09 = false
-local _10 = false
-local _11 = false
+local layer1 = false
+local layer2 = false
+local layer3 = false
+local layer4 = false
+local layer5 = false
+local layer6 = false
+local layer7 = false
+local layer8 = false
 
 -- Map --
 
@@ -24,11 +18,20 @@ local _11 = false
 -- Top --
 
 function handle_key_11(pressed)
-    keybow.set_key("h", pressed)
+    if layer1 == true then
+        keybow.set_key("w", pressed)
+    elseif layer2 == true then
+        keybow.set_key("k", pressed)
+    elseif layer3 == true then
+        keybow.set_key("z", pressed)
+    else
+        keybow.set_key("h", pressed)
+    end
 end
 
 function handle_key_08(pressed)
-    keybow.set_key("s", pressed)
+    -- keybow.set_key("s", pressed)
+    layer7 = pressed
 end
 
 function handle_key_05(pressed)
