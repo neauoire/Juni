@@ -1,6 +1,6 @@
 # Juni Keyboard
 
-5% Keyboard Layout for Pimoroni's Keybow
+A **tiny 12 keys mechanical keyboard Layout** for [Pimoroni's Keybow](https://learn.pimoroni.com/keybow).
 
 ## Layers
 

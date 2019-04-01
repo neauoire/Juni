@@ -25,7 +25,6 @@ template = {
     {}
 }
 
-
 function input(key,mod,pressed)
     if pressed == true then
         key_down(key,mod)
