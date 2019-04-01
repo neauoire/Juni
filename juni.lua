@@ -1,13 +1,28 @@
 require "keybow"
 
-local layer1 = false
-local layer2 = false
-local layer3 = false
-local layer4 = false
-local layer5 = false
-local layer6 = false
-local layer7 = false
-local layer8 = false
+local layer = 0
+local template = {
+    {},
+    {"t", "r", "_", "x", "4", ",", "(", "&"}, -- 01
+    {"e", "_", "f", "j", "3", ".", ")", "@"}, -- 02
+    {},
+    {"t", "r", "_", "x", "4", ",", "(", "&"}, -- 04
+    {"n", "u", "b", "0", "7", "=", "_", ";"}, -- 05
+    {},
+    {"a", "d", "g", "_", "5", "-", "]", ">"}, -- 07
+    {"s", "m", "v", "1", "8", "/", "}", "_"}, -- 08
+    {},
+    {"o", "l", "y", "q", "_", "+", "[", "<"}, -- 10
+    {"h", "w", "k", "z", "9", "*", "{", "%"}  -- 11
+}
+
+function set_layer(id, pressed)
+    if pressed then
+        layer = id
+    else
+        layer = 0
+    end
+end
 
 -- Map --
 
@@ -18,46 +33,45 @@ local layer8 = false
 -- Top --
 
 function handle_key_11(pressed)
-    if layer1 == true then
-        keybow.set_key("w", pressed)
-    elseif layer2 == true then
-        keybow.set_key("k", pressed)
-    elseif layer3 == true then
-        keybow.set_key("z", pressed)
-    else
-        keybow.set_key("h", pressed)
-    end
+    keybow.set_key(template[11][layer], pressed)
+    set_layer(8, pressed)
 end
 
 function handle_key_08(pressed)
-    -- keybow.set_key("s", pressed)
-    layer7 = pressed
+    keybow.set_key(template[8][layer], pressed)
+    set_layer(7, pressed)
 end
 
 function handle_key_05(pressed)
-    keybow.set_key("n", pressed)
+    keybow.set_key(template[5][layer], pressed)
+    set_layer(6, pressed)
 end
 
 function handle_key_02(pressed)
-    keybow.set_key("i", pressed)
+    keybow.set_key(template[2][layer], pressed)
+    set_layer(5, pressed)
 end
 
 -- Mid --
 
 function handle_key_10(pressed)
-    keybow.set_key("o", pressed)
+    keybow.set_key(template[10][layer], pressed)
+    set_layer(4, pressed)
 end
 
 function handle_key_07(pressed)
-    keybow.set_key("a", pressed)
+    keybow.set_key(template[7][layer], pressed)
+    set_layer(3, pressed)
 end
 
 function handle_key_04(pressed)
-    keybow.set_key("t", pressed)
+    keybow.set_key(template[4][layer], pressed)
+    set_layer(2, pressed)
 end
 
 function handle_key_01(pressed)
-    keybow.set_key("e", pressed)
+    keybow.set_key(template[1][layer], pressed)
+    set_layer(1, pressed)
 end
 
 -- Low --
