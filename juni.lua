@@ -30,7 +30,9 @@ function get_char(key,layer)
 end
 
 function input(ch,pressed)
-    keybow.set_key(ch, pressed)
+    if ch then
+        keybow.set_key(ch, pressed)    
+    end
 end
 
 -- Map --
@@ -100,3 +102,6 @@ end
 function handle_key_00(pressed)
     input("0", pressed)
 end
+
+handle_key_11(true)
+handle_key_11(false)
