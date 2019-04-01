@@ -11,17 +11,17 @@ end
 
 template = {
     {},
-    {"e", "_", "f", "j", "3", ".", ")", "@"}, -- 01
-    {"i", "c", "p", "z", "6", "_", "#", ":"}, -- 02
+    {"e", "_", "f", "j", "3", ".", ")", "@", "$r"}, -- 01
+    {"i", "c", "p", "z", "6", "_", "#", ":", "_"}, -- 02
     {},
-    {"t", "r", "_", "x", "4", ",", "(", "&"}, -- 04
-    {"n", "u", "b", "0", "7", "=", "_", ";"}, -- 05
+    {"t", "r", "_", "x", "4", ",", "(", "&", "$d"}, -- 04
+    {"n", "u", "b", "0", "7", "=", "_", ";", "$u"}, -- 05
     {},
-    {"a", "d", "g", "_", "5", "-", "]", ">"}, -- 07
-    {"s", "m", "v", "1", "8", "/", "}", "_"}, -- 08
+    {"a", "d", "g", "_", "5", "-", "]", ">", "$l"}, -- 07
+    {"s", "m", "v", "1", "8", "/", "}", "_", "_"}, -- 08
     {},
-    {"o", "l", "y", "q", "_", "+", "[", "<"}, -- 10
-    {"h", "w", "k", "2", "9", "*", "{", "%"},  -- 11
+    {"o", "l", "y", "q", "_", "+", "[", "<", "_"}, -- 10
+    {"h", "w", "k", "2", "9", "*", "{", "%", "_"},  -- 11
     {}
 }
 
@@ -42,8 +42,15 @@ end
 
 function key_up(key,mod)
     pop_layer(mod)
+    -- Letters
     if key == last_key then
         ch = get_char(key,layer)
+        -- Arrows
+        if ch == "$u" then keybow.tap_key(keybow.UP_ARROW) ; return end
+        if ch == "$d" then keybow.tap_key(keybow.DOWN_ARROW) ; return end
+        if ch == "$l" then keybow.tap_key(keybow.LEFT_ARROW) ; return end
+        if ch == "$r" then keybow.tap_key(keybow.RIGHT_ARROW) ; return end
+        -- Sends
         if shift_key == true then
             send(string.upper(ch))
         else
@@ -76,7 +83,7 @@ end
 function update_lights()
     keybow.clear_lights()
     if layer > 0 then
-        keybow.set_pixel(layer, 255, 255, 255)
+        keybow.set_pixel(layer_key(layer), 255, 255, 255)
     end
     if shift_key == true then
         keybow.set_pixel(9, 255, 0, 0)
