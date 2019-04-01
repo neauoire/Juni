@@ -83,6 +83,18 @@ function update_lights()
     end
 end
 
+function layer_key(layer)
+    if layer == 1 then return 1 end
+    if layer == 2 then return 4 end
+    if layer == 3 then return 7 end
+    if layer == 4 then return 10 end
+    if layer == 5 then return 2 end
+    if layer == 6 then return 5 end
+    if layer == 7 then return 8 end
+    if layer == 8 then return 11 end
+    return 0
+end
+
 -- Map --
 
 -- TOP 11 08 05 02 --
@@ -129,7 +141,7 @@ end
 
 function handle_key_09(pressed)
     shift_key = pressed
-
+    update_lights()
 end
 
 function handle_key_06(pressed)
