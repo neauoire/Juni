@@ -1,7 +1,10 @@
-require "keybow"
+-- require "keybow"
 
 local layer = 0
-local template = {
+
+local testing = {0,1,2,3}
+
+template = {
     {},
     {"t", "r", "_", "x", "4", ",", "(", "&"}, -- 01
     {"e", "_", "f", "j", "3", ".", ")", "@"}, -- 02
@@ -24,6 +27,14 @@ function set_layer(id, pressed)
     end
 end
 
+function get_char(key,layer)
+    return template[key+1][layer+1]
+end
+
+function set_key(ch,pressed)
+    keybow.set_key(ch, pressed)
+end
+
 -- Map --
 
 -- TOP 11 08 05 02 --
@@ -33,61 +44,61 @@ end
 -- Top --
 
 function handle_key_11(pressed)
-    keybow.set_key(template[11][layer], pressed)
+    set_key(get_char(11,layer), pressed)
     set_layer(8, pressed)
 end
 
 function handle_key_08(pressed)
-    keybow.set_key(template[8][layer], pressed)
+    set_key(get_char(8,layer), pressed)
     set_layer(7, pressed)
 end
 
 function handle_key_05(pressed)
-    keybow.set_key(template[5][layer], pressed)
+    set_key(get_char(5,layer), pressed)
     set_layer(6, pressed)
 end
 
 function handle_key_02(pressed)
-    keybow.set_key(template[2][layer], pressed)
+    set_key(get_char(2,layer), pressed)
     set_layer(5, pressed)
 end
 
 -- Mid --
 
 function handle_key_10(pressed)
-    keybow.set_key(template[10][layer], pressed)
+    set_key(get_char(10,layer), pressed)
     set_layer(4, pressed)
 end
 
 function handle_key_07(pressed)
-    keybow.set_key(template[7][layer], pressed)
+    set_key(get_char(7,layer), pressed)
     set_layer(3, pressed)
 end
 
 function handle_key_04(pressed)
-    keybow.set_key(template[4][layer], pressed)
+    set_key(get_char(4,layer), pressed)
     set_layer(2, pressed)
 end
 
 function handle_key_01(pressed)
-    keybow.set_key(template[1][layer], pressed)
+    set_key(get_char(1,layer), pressed)
     set_layer(1, pressed)
 end
 
 -- Low --
 
 function handle_key_09(pressed)
-    keybow.set_key("0", pressed)
+    set_key("0", pressed)
 end
 
 function handle_key_06(pressed)
-    keybow.set_key("0", pressed)
+    set_key("0", pressed)
 end
 
 function handle_key_03(pressed)
-    keybow.set_key("0", pressed)
+    set_key("0", pressed)
 end
 
 function handle_key_00(pressed)
-    keybow.set_key("0", pressed)
+    set_key("0", pressed)
 end
