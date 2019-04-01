@@ -102,6 +102,3 @@ end
 function handle_key_00(pressed)
     input("0", pressed)
 end
-
-handle_key_11(true)
-handle_key_11(false)
