@@ -11,8 +11,8 @@ end
 
 template = {
     {},
-    {"e", "_", "f", "x", "4", ",", "(", "&"}, -- 01
-    {"i", "c", "p", "j", "3", ".", ")", "@"}, -- 02
+    {"e", "_", "f", "j", "3", ".", ")", "@"}, -- 01
+    {"i", "c", "p", "z", "6", "_", "#", ":"}, -- 02
     {},
     {"t", "r", "_", "x", "4", ",", "(", "&"}, -- 04
     {"n", "u", "b", "0", "7", "=", "_", ";"}, -- 05
@@ -21,7 +21,7 @@ template = {
     {"s", "m", "v", "1", "8", "/", "}", "_"}, -- 08
     {},
     {"o", "l", "y", "q", "_", "+", "[", "<"}, -- 10
-    {"h", "w", "k", "z", "9", "*", "{", "%"},  -- 11
+    {"h", "w", "k", "2", "9", "*", "{", "%"},  -- 11
     {}
 }
 
@@ -32,6 +32,7 @@ function input(key,mod,pressed)
     else
         key_up(key,mod)
     end
+    update_lights()
 end
 
 function key_down(key,mod)
@@ -65,7 +66,6 @@ end
 function pop_layer(id)
     if id ~= layer then return end
     layer = 0
-    update_lights()
 end
 
 function send(ch)
