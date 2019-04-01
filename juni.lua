@@ -2,23 +2,11 @@ require "keybow"
 
 local layer = 0
 local last_key = nil
-local keys_down = {}
+local shift_key = false
 
-function setup() -- Set custom lights up
+function setup()
     keybow.auto_lights(false)
     keybow.clear_lights()
-    keybow.set_pixel(0, 255, 255, 0) -- Green
-    keybow.set_pixel(1, 255, 255, 0) -- Green
-    keybow.set_pixel(2, 0, 255, 255) -- Cyan
-    keybow.set_pixel(3, 255, 0, 255) -- Magenta
-    keybow.set_pixel(4, 0, 255, 255) -- Cyan
-    keybow.set_pixel(5, 0, 255, 255) -- Cyan
-    keybow.set_pixel(6, 255, 0, 255) -- Magenta
-    keybow.set_pixel(7, 255, 0, 255) -- Magenta
-    keybow.set_pixel(8, 0, 255, 255) -- Cyan
-    keybow.set_pixel(9, 255, 0, 255) -- Magenta
-    keybow.set_pixel(10, 0, 255, 255) -- Cyan
-    keybow.set_pixel(11, 0, 255, 255) -- Cyan
 end
 
 template = {
@@ -34,7 +22,7 @@ template = {
     {},
     {"o", "l", "y", "q", "_", "+", "[", "<"}, -- 10
     {"h", "w", "k", "z", "9", "*", "{", "%"},  -- 11
-    {"?","?","?","?","?","?","?","?"}
+    {"_","_","_","_","_","_","_","_"}
 }
 
 
@@ -54,7 +42,12 @@ end
 function key_up(key,mod)
     pop_layer(mod)
     if key == last_key then
-        send(get_char(key,layer))
+        ch = get_char(key,layer)
+        if shift_key == true then
+            send(string.upper(ch))
+        else
+            send(ch)
+        end
     end
 end
 
@@ -66,16 +59,28 @@ function push_layer(id)
     if layer > 0 then return end
     if layer == id then return end
     layer = id
+    
 end
 
 function pop_layer(id)
     if id ~= layer then return end
     layer = 0
+    update_lights()
 end
 
 function send(ch)
     -- print("output:",ch)
     keybow.tap_key(ch)
+end
+
+function update_lights()
+    keybow.clear_lights()
+    if layer > 0 then
+        keybow.set_pixel(layer, 255, 255, 255)
+    end
+    if shift_key == true then
+        keybow.set_pixel(9, 255, 0, 0)
+    end
 end
 
 -- Map --
@@ -123,74 +128,17 @@ end
 -- Low --
 
 function handle_key_09(pressed)
-    input("0", pressed)
+    shift_key = pressed
 end
 
 function handle_key_06(pressed)
-    input("0", pressed)
+    keybow.set_key(keybow.BACKSPACE, pressed)
 end
 
 function handle_key_03(pressed)
-    input("0", pressed)
+    keybow.set_key(keybow.ENTER, pressed)
 end
 
 function handle_key_00(pressed)
-    input("0", pressed)
+    keybow.set_key(keybow.SPACE, pressed)
 end
-
-function benchmark()
-    print("============= Layer: AA")
-    print("\nexpected: o")
-    handle_key_10(true)
-    handle_key_10(false)
-
-    print("============= Layer: AA ")
-    print("\nexpected: o")
-    handle_key_10(true)
-    handle_key_10(false)
-
-    print("============= Layer: AAA ")
-    print("\nexpected: o")
-    handle_key_10(true)
-    handle_key_10(true)
-    handle_key_10(false)
-
-    print("============= Layer: AAA ")
-    print("\nexpected: o o")
-    handle_key_10(true)
-    handle_key_10(false)
-    handle_key_10(false)
-
-    print("============= Layer: ABBA")
-    print("\nexpected: 8")
-    handle_key_10(true)
-    handle_key_08(true)
-    handle_key_08(false)
-    handle_key_10(false)
-
-    print("============= Layer: ABAB")
-    print("\nexpected: 8")
-    handle_key_10(true)
-    handle_key_08(true)
-    handle_key_10(false)
-    handle_key_08(false)
-
-    print("============= Layer: ABAB ")
-    print("\nexpected: 8")
-    handle_key_10(true)
-    handle_key_05(true)
-    handle_key_10(false)
-    handle_key_05(false)
-
-    print("============= Layer: ABBBBA")
-    print("\nexpected: mm")
-    handle_key_10(true)
-    handle_key_08(true)
-    handle_key_08(false)
-    handle_key_08(true)
-    handle_key_08(false)
-    handle_key_10(false)
-    
-end
-
--- benchmark()
