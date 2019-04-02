@@ -8,7 +8,7 @@ The `juni.lua` layout goes into the root of the SD Card, you can see it in actio
 
 ## Layout
 
-There are 8 input keys(`in`), and 4 function keys(`fn`). Typing letters & numbers is done by moving across the different layers of the keyboard. 
+There are **8 input keys**(`in`), and **4 function keys**(`fn`). Typing letters & numbers is done by moving across the different layers of the keyboard. 
 
 | row1    | row2    | row3    | row4    |
 | :-:     | :-:     | :-:     | :-:     |
@@ -18,7 +18,7 @@ There are 8 input keys(`in`), and 4 function keys(`fn`). Typing letters & number
 
 ## Guide
 
-There are 9 layers in total, by default, the 8 top keys will input the values of the layer 0.
+There are **9 layers in total**, by default, the 8 top keys will input the values of the layer 0.
 
 ### Input Keys
 
@@ -40,4 +40,13 @@ Layers are navigated by holding down an input key and typing a second key. For i
 | **fn4** | **fn3**     | **fn2** | **fn1** |
 | :-:     | :-:         | :-:     | :-:     |
 | `shift` | `backspace` | `enter` | `space` |
+
+### Special Layers
+
+#### Navigation Layer(Layer 8)
+
+| row1     | row2         | row3         | row4          |
+| :-:      | :-:          | :-:          | :-:           |
+| `escape` | `home`       | `arrow up`   | `end`         |
+| ??       | `arrow left` | `arrow down` | `arrow right` |
 
