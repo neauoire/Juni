@@ -8,7 +8,7 @@ The `juni.lua` layout goes into the root of the SD Card, you can see it in actio
 
 ## Installation
 
-Modify `keys.lua` in the SD Card root. Add the following line and comment all previous layouts:
+Save `juni.lua` into the `/layouts` folder, and modify `keys.lua`, by adding the following line and comment all previous layouts:
 
 ```
 require "layouts/juni" -- 12 Keys Chorded Keyboard
