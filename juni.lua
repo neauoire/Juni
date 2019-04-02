@@ -11,17 +11,17 @@ end
 
 template = {
     {},
-    {"e", "_", "f", "j", "3", ".", ")", "@", "$r"}, -- 01
-    {"i", "c", "p", "z", "6", "_", "#", ":", "_"}, -- 02
+    {"e", "_", "f", "j", "4", ".", ")", "@", "$r"}, -- 01
+    {"i", "c", "p", "z", "7", "_", "#", ":", "_"}, -- 02
     {},
-    {"t", "r", "_", "x", "4", ",", "(", "&", "$d"}, -- 04
-    {"n", "u", "b", "0", "7", "=", "_", ";", "$u"}, -- 05
+    {"t", "r", "_", "x", "5", ",", "(", "&", "$d"}, -- 04
+    {"n", "u", "b", "1", "8", "=", "_", ";", "$u"}, -- 05
     {},
-    {"a", "d", "g", "_", "5", "-", "]", ">", "$l"}, -- 07
-    {"s", "m", "v", "1", "8", "/", "}", "_", "_"}, -- 08
+    {"a", "d", "g", "_", "6", "-", "]", ">", "$l"}, -- 07
+    {"s", "m", "v", "2", "9", "/", "}", "_", "_"}, -- 08
     {},
-    {"o", "l", "y", "q", "_", "+", "[", "<", "_"}, -- 10
-    {"h", "w", "k", "2", "9", "*", "{", "%", "_"},  -- 11
+    {"o", "l", "y", "q", "_", "+", "[", "<", "$e"}, -- 10
+    {"h", "w", "k", "3", "0", "*", "{", "%", "_"},  -- 11
     {}
 }
 
@@ -49,6 +49,9 @@ function key_up(key,mod)
         if ch == "$d" then keybow.tap_key(keybow.DOWN_ARROW) ; return end
         if ch == "$l" then keybow.tap_key(keybow.LEFT_ARROW) ; return end
         if ch == "$r" then keybow.tap_key(keybow.RIGHT_ARROW) ; return end
+        if ch == "$e" then keybow.tap_key(keybow.ESCAPE) ; return end
+        -- if ch == "$h" then keybow.tap_key(keybow.HOME) ; return end
+        -- if ch == "$e" then keybow.tap_key(keybow.END) ; return end
         -- Sends
         send(ch)
     end
@@ -160,5 +163,9 @@ function handle_key_03(pressed)
 end
 
 function handle_key_00(pressed)
-    keybow.set_key(keybow.SPACE, pressed)
+    if shift_key == true then 
+        keybow.set_key(keybow.TAB, pressed)
+    else
+        keybow.set_key(keybow.SPACE, pressed)
+    end
 end

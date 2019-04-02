@@ -26,14 +26,8 @@ Layers are navigated by holding down an input key and typing a second key. For i
 
 | Layer 0 | Layer 1 | Layer 2 | Layer 3 | Layer 4 |
 | :-:     | :-:     | :-:     | :-:     | :-:     |
-| `hsni`  | `wmuc`  | `kvbp`  | `210z`  | `9876`  |
+| `hsni`  | `wmuc`  | `kvbp`  | `321z`  | `0987`  |
 | `oate`  | `ldr*`  | `yg*f`  | `q*xj`  | `*543`  |
-
-#### Special Characters
-
-| Layer 5 | Layer 6 | Layer 7 | Layer 8 | Layer 9 |
-| `*/=*`  | `{}*#`  | `%*;:`  | `____`  | `____`  |
-| `+-,.`  | `[]()`  | `<>&@`  | `____`  | `____`  |
 
 ### Functions Keys
 
@@ -43,10 +37,37 @@ Layers are navigated by holding down an input key and typing a second key. For i
 
 ### Special Layers
 
+#### Math Layer(Layer 5)
+
+| row1 | row2 | row3 | row4       |
+| :-:  | :-:  | :-:  | :-:        |
+| ?    | ?    | ?    | *          |
+| `-`  | `=`  | `/`  | `backtick` |
+
+#### Punctuation Layer(Layer 6)
+
+| row1 | row2 | row3 | row4 |
+| :-:  | :-:  | :-:  | :-:  |
+| ?    | ?    | *    | ?    |
+| `;`  | `'`  | `,`  | `.`  |
+
+#### Brackets Layer(Layer 7)
+
+Note that the `{` and `}` characters are usually typed using `shift+[`, and `shift+]`, or **fn4 + in7 + in2**, and **fn4 + in7 + in1**.
+
+| row1 | row2 | row3 | row4 |
+| :-:  | :-:  | :-:  | :-:  |
+| `|`  | *    | `<`  | `>`  |
+| `(`  | `)`  | `[`  | `]`  |
+
 #### Navigation Layer(Layer 8)
 
 | row1     | row2         | row3         | row4          |
 | :-:      | :-:          | :-:          | :-:           |
-| `escape` | `home`       | `arrow up`   | `end`         |
-| ??       | `arrow left` | `arrow down` | `arrow right` |
+| *        | `home`       | `arrow up`   | `end`         |
+| `escape` | `arrow left` | `arrow down` | `arrow right` |
 
+### Extras
+
+- To use capslock, double-tap **fn4**. 
+- To input a tab, hold **fn4** and tap **fn1**.
