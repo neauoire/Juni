@@ -8,7 +8,9 @@ The `juni.lua` layout goes into the root of the SD Card, you can see it in actio
 
 ## Layout
 
-There are **8 input keys**(`in`), and **4 function keys**(`fn`). Typing letters & numbers is done by moving across the different layers of the keyboard. 
+There are **8 input keys**(`in`), and **4 function keys**(`fn`). 
+
+Typing letters & numbers is done by moving across the different layers of the keyboard. 
 
 | row1    | row2    | row3    | row4    |
 | :-:     | :-:     | :-:     | :-:     |
@@ -18,11 +20,9 @@ There are **8 input keys**(`in`), and **4 function keys**(`fn`). Typing letters 
 
 ## Guide
 
-There are **9 layers in total**, by default, the 8 top keys will input the values of `layer 0`.
-
 ### Input Keys
 
-Layers are navigated by holding down an input key and typing a second key. For instance, holding down `in1`, and then tapping `in8`, will input `w`. To capitalize it, just hold down the `fn4` key, before holding down `in1`, and then tapping `in8`.
+There are **9 layers in total**, by default, the 8 top keys will input the values of `layer 0`. Layers are navigated by holding down an input key and typing a second key. For instance, holding down `in1`, and then tapping `in8`, will input `w`. To capitalize it, just hold down the `fn4` key, before holding down `in1`, and then tapping `in8`.
 
 | Layer 0 | Layer 1 | Layer 2 | Layer 3 | Layer 4 |
 | :-:     | :-:     | :-:     | :-:     | :-:     |
@@ -53,8 +53,6 @@ Layers are navigated by holding down an input key and typing a second key. For i
 
 #### Brackets Layer(Layer 7)
 
-Note that the `{` and `}` characters are usually typed using `shift+[`, and `shift+]`, or **fn4 + in7 + in2**, and **fn4 + in7 + in1**.
-
 | row1   | row2 | row3 | row4 |
 | :-:    | :-:  | :-:  | :-:  |
 | `pipe` | *    | `<`  | `>`  |
@@ -72,4 +70,5 @@ Note that the `{` and `}` characters are usually typed using `shift+[`, and `shi
 - To use capslock, double-tap **fn4**. 
 - To use delete, instead of backspace, hold **fn4** and tap **fn3**.
 - To input a tab, hold **fn4** and tap **fn1**.
+- To input curlies, use the sequences **fn4 + in7 + in2**, and **fn4 + in7 + in1**.
 
