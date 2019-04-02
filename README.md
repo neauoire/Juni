@@ -1,6 +1,8 @@
 # Juni Keyboard
 
-A **tiny 12 keys mechanical keyboard Layout** for [Pimoroni's Keybow](https://learn.pimoroni.com/keybow).
+The Juni Layout is a 12-keys chorded keyboard. The script runs on Pimoroni's [Keybow](https://learn.pimoroni.com/keybow), the **.lua** layout goes into the root of the SD Card. It was designed to be used with the [Orca livecoding environment](http://github.com/hundredrabbits/Orca/), but has most common keys and controls, making it a versatile and portable single-handed keyboard.
+
+<img src='https://wiki.xxiivv.com/media/diary/593.jpg' width='600'/>
 
 ## Layers
 
