@@ -2,7 +2,7 @@
 
 The [Juni Layout](http://wiki.xxiivv.com/Juni) is a **12-keys [chorded keyboard](https://en.wikipedia.org/wiki/Chorded_keyboard)** running on Pimoroni's [Keybow](https://learn.pimoroni.com/keybow). It was designed to be used with the [Orca livecoding environment](http://github.com/hundredrabbits/Orca/), but has most common keys and controls, making it a versatile and portable single-handed keyboard.
 
-The `juni.lua` layout goes into the root of the SD Card, you can see it in action [here](https://twitter.com/neauoire/status/1112617902270607360).
+You can see the `juni.lua` in action [here](https://twitter.com/neauoire/status/1112617902270607360).
 
 <img src='https://wiki.xxiivv.com/media/diary/593.jpg' width='600'/>
 
