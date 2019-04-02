@@ -20,7 +20,7 @@ template = {
     {"a", "d", "g", "_", "6", "=", "'", ")", "$al"}, -- 07
     {"s", "m", "v", "2", "9", "?", "?", "_", "$jh"}, -- 08
     {},
-    {"o", "l", "y", "q", "_", "-", ";", "(", "$je"}, -- 10
+    {"o", "l", "y", "q", "_", "-", ";", "(", "$es"}, -- 10
     {"h", "w", "k", "3", "0", "?", "?", "|", "_"},  -- 11
     {}
 }
@@ -49,9 +49,9 @@ function key_up(key,mod)
         if ch == "$ad" then keybow.tap_key(keybow.DOWN_ARROW) ; return end
         if ch == "$al" then keybow.tap_key(keybow.LEFT_ARROW) ; return end
         if ch == "$ar" then keybow.tap_key(keybow.RIGHT_ARROW) ; return end
-        if ch == "$je" then keybow.tap_key(keybow.ESCAPE) ; return end
         if ch == "$jh" then keybow.tap_key(keybow.HOME) ; return end
         if ch == "$je" then keybow.tap_key(keybow.END) ; return end
+        if ch == "$es" then keybow.tap_key(keybow.ESC) ; return end
         -- Sends
         send(ch)
     end
