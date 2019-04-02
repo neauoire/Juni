@@ -79,3 +79,10 @@ There are **9 layers in total**, by default, the 8 top keys will input the value
 - To use delete, instead of backspace, hold **fn4** and tap **fn3**.
 - To input a tab, hold **fn4** and tap **fn1**.
 - To input curlies, use the sequences **fn4 + in7 + in2**, and **fn4 + in7 + in1**.
+
+### TODOs
+
+- Implement `Meta/Ctrl` keys.
+- Allow for key repeat for layered inputs.
+
+
