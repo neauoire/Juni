@@ -11,16 +11,16 @@ end
 
 template = {
     {},
-    {"e", "_", "f", "j", "4", ".", ")", "@", "$r"}, -- 01
-    {"i", "c", "p", "z", "7", "_", "#", ":", "_"}, -- 02
+    {"e", "_", "f", "j", "4", ".", ")", "@", "$ar"}, -- 01
+    {"i", "c", "p", "z", "7", "_", "#", ":", "$je"}, -- 02
     {},
-    {"t", "r", "_", "x", "5", ",", "(", "&", "$d"}, -- 04
-    {"n", "u", "b", "1", "8", "=", "_", ";", "$u"}, -- 05
+    {"t", "r", "_", "x", "5", ",", "(", "&", "$ad"}, -- 04
+    {"n", "u", "b", "1", "8", "=", "_", ";", "$au"}, -- 05
     {},
-    {"a", "d", "g", "_", "6", "-", "]", ">", "$l"}, -- 07
-    {"s", "m", "v", "2", "9", "/", "}", "_", "_"}, -- 08
+    {"a", "d", "g", "_", "6", "-", "]", ">", "$al"}, -- 07
+    {"s", "m", "v", "2", "9", "/", "}", "_", "$jh"}, -- 08
     {},
-    {"o", "l", "y", "q", "_", "+", "[", "<", "$e"}, -- 10
+    {"o", "l", "y", "q", "_", "+", "[", "<", "$je"}, -- 10
     {"h", "w", "k", "3", "0", "*", "{", "%", "_"},  -- 11
     {}
 }
@@ -45,13 +45,13 @@ function key_up(key,mod)
     if key == last_key then
         ch = get_char(key,layer)
         -- Arrows
-        if ch == "$u" then keybow.tap_key(keybow.UP_ARROW) ; return end
-        if ch == "$d" then keybow.tap_key(keybow.DOWN_ARROW) ; return end
-        if ch == "$l" then keybow.tap_key(keybow.LEFT_ARROW) ; return end
-        if ch == "$r" then keybow.tap_key(keybow.RIGHT_ARROW) ; return end
-        if ch == "$e" then keybow.tap_key(keybow.ESCAPE) ; return end
-        -- if ch == "$h" then keybow.tap_key(keybow.HOME) ; return end
-        -- if ch == "$e" then keybow.tap_key(keybow.END) ; return end
+        if ch == "$au" then keybow.tap_key(keybow.UP_ARROW) ; return end
+        if ch == "$ad" then keybow.tap_key(keybow.DOWN_ARROW) ; return end
+        if ch == "$al" then keybow.tap_key(keybow.LEFT_ARROW) ; return end
+        if ch == "$ar" then keybow.tap_key(keybow.RIGHT_ARROW) ; return end
+        if ch == "$je" then keybow.tap_key(keybow.ESCAPE) ; return end
+        if ch == "$jh" then keybow.tap_key(keybow.HOME) ; return end
+        if ch == "$je" then keybow.tap_key(keybow.END) ; return end
         -- Sends
         send(ch)
     end
