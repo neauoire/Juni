@@ -31,28 +31,28 @@ There are **9 layers in total**, by default, the 8 top keys will input the value
 
 ### Special Layers
 
-#### Math Layer(Layer 5)
+#### Layer 5 — Math Layer
 
 | row1 | row2 | row3 | row4       |
 | :-:  | :-:  | :-:  | :-:        |
 | ?    | ?    | ?    | *          |
 | `-`  | `=`  | `/`  | `backtick` |
 
-#### Punctuation Layer(Layer 6)
+#### Layer 6 — Punctuation Layer
 
 | row1 | row2 | row3 | row4 |
 | :-:  | :-:  | :-:  | :-:  |
 | ?    | ?    | *    | ?    |
 | `;`  | `'`  | `,`  | `.`  |
 
-#### Brackets Layer(Layer 7)
+#### Layer 7 — Brackets Layer
 
 | row1   | row2 | row3 | row4 |
 | :-:    | :-:  | :-:  | :-:  |
 | `pipe` | *    | `<`  | `>`  |
 | `(`    | `)`  | `[`  | `]`  |
 
-#### Navigation Layer(Layer 8)
+#### Layer 8 — Navigation Layer
 
 | row1     | row2         | row3         | row4          |
 | :-:      | :-:          | :-:          | :-:           |
