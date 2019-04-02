@@ -6,6 +6,14 @@ The `juni.lua` layout goes into the root of the SD Card, you can see it in actio
 
 <img src='https://wiki.xxiivv.com/media/diary/593.jpg' width='600'/>
 
+## Installation
+
+Modify `keys.lua` in the SD Card root. Add the following line and comment all previous layouts:
+
+```
+require "layouts/juni" -- 12 Keys Chorded Keyboard
+```
+
 ## Layout
 
 There are **8 input keys**(`in`), and **4 function keys**(`fn`). 
