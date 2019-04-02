@@ -70,4 +70,6 @@ Note that the `{` and `}` characters are usually typed using `shift+[`, and `shi
 ### Extras
 
 - To use capslock, double-tap **fn4**. 
+- To use delete, instead of backspace, hold **fn4** and tap **fn3**.
 - To input a tab, hold **fn4** and tap **fn1**.
+

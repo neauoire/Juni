@@ -74,7 +74,6 @@ function pop_layer(id)
 end
 
 function send(ch)
-    -- print("output:",ch)
     keybow.tap_key(ch)
 end
 
@@ -155,7 +154,11 @@ function handle_key_09(pressed)
 end
 
 function handle_key_06(pressed)
-    keybow.set_key(keybow.BACKSPACE, pressed)
+    if shift_key == true then 
+        keybow.set_key(keybow.DELETE, pressed)
+    else
+        keybow.set_key(keybow.BACKSPACE, pressed)
+    end
 end
 
 function handle_key_03(pressed)
