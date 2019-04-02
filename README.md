@@ -18,11 +18,11 @@ There are **8 input keys**(`in`), and **4 function keys**(`fn`). Typing letters 
 
 ## Guide
 
-There are **9 layers in total**, by default, the 8 top keys will input the values of the layer 0.
+There are **9 layers in total**, by default, the 8 top keys will input the values of `layer 0`.
 
 ### Input Keys
 
-Layers are navigated by holding down an input key and typing a second key. For instance, holding down `in1`, and then tapping `in8`, will input `w`. 
+Layers are navigated by holding down an input key and typing a second key. For instance, holding down `in1`, and then tapping `in8`, will input `w`. To capitalize it, just hold down the `fn4` key, before holding down `in1`, and then tapping `in8`.
 
 | Layer 0 | Layer 1 | Layer 2 | Layer 3 | Layer 4 |
 | :-:     | :-:     | :-:     | :-:     | :-:     |
@@ -55,10 +55,10 @@ Layers are navigated by holding down an input key and typing a second key. For i
 
 Note that the `{` and `}` characters are usually typed using `shift+[`, and `shift+]`, or **fn4 + in7 + in2**, and **fn4 + in7 + in1**.
 
-| row1 | row2 | row3 | row4 |
-| :-:  | :-:  | :-:  | :-:  |
-| ?    | *    | `<`  | `>`  |
-| `(`  | `)`  | `[`  | `]`  |
+| row1   | row2 | row3 | row4 |
+| :-:    | :-:  | :-:  | :-:  |
+| `pipe` | *    | `<`  | `>`  |
+| `(`    | `)`  | `[`  | `]`  |
 
 #### Navigation Layer(Layer 8)
 
