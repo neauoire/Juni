@@ -57,7 +57,7 @@ Note that the `{` and `}` characters are usually typed using `shift+[`, and `shi
 
 | row1 | row2 | row3 | row4 |
 | :-:  | :-:  | :-:  | :-:  |
-| `|`  | *    | `<`  | `>`  |
+| `|`  | *    |      |      |
 | `(`  | `)`  | `[`  | `]`  |
 
 #### Navigation Layer(Layer 8)
